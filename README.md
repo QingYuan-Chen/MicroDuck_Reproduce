@@ -143,10 +143,15 @@ uv run train Mjlab-Velocity-Specialist-Flat-MicroDuck \
 
 ## 已确认问题
 
-本地步态策略从 `model_250` 开始出现右侧 `hip_yaw` 贴限位，最晚到
+已归档的第一批本地步态策略从 `model_250` 开始出现右侧 `hip_yaw` 贴限位，最晚到
 `model_750` 已演变为两侧在站立和全部测试步态下长期顶限位，并持续到
 `model_3498`。这不是官方策略的正常行为。完整时间线、评估方法和证据见
 [步态策略 hip_yaw 长期顶限位诊断](docs/gait/hip_yaw_limit_diagnosis.md)。
+
+新一批种子 42、1024 并行环境的无镜像约束 A 组已续训至 2500 轮。
+训练曲线进入平台，但检查点间仍有转向和稳定性波动；当前以 2250 轮为
+步态主候选。训练条件、固定命令对比及判断边界见
+[A 组续训至 2500 轮评估](docs/gait/turn_A_to_2500_evaluation.md)。
 
 ## 目录说明
 
